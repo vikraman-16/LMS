@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}My Account{% endblock %}
+{% block content %}
+<h2>My Courses</h2>
+<ul class="list-group">
+    {% for course in registered_courses %}
+    <li class="list-group-item">{{ course.title }}</li>
+    {% endfor %}
+</ul>
+{% if registered_courses|length == 0 %}
+<p>You are not enrolled in any courses.</p>
+{% endif %}
+{% endblock %}
+
